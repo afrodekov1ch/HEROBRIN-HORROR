@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class AudioController : MonoBehaviour
 {
-    public AudioSource audio_;
+    private AudioSource audio_;
 
     private void Start()
     {
+        audio_ = GetComponent<AudioSource>();
         if (!PlayerPrefs.HasKey("volume")) audio_.volume = 1;
     }
     private void Update()
