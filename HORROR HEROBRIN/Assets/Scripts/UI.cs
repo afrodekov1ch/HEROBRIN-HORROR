@@ -10,4 +10,5 @@ public class UI : MonoBehaviour
     {
         SceneManager.LoadScene(lvl);
     }
+    
 }
