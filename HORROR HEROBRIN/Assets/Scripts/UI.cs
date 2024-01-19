@@ -21,7 +21,11 @@ public class UI : MonoBehaviour
     //    lvls[8] = PlayerPrefs.GetInt("lvl8");
     //    lvls[9] = PlayerPrefs.GetInt("lvl9");
     //}
-    public void LoadScene(int lvl)
+    public void LoadScene(int scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
+    public void Loadlvl(int lvl)
     {
         switch(lvl)
         {
