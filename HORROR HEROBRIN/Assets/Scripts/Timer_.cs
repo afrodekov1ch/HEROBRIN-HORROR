@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class Timer_ : MonoBehaviour
 {
-    public float delayInSeconds = 5f;
+    public float delayInSeconds = 6f;
     public Button specificButton;
     public Image timeBar;
     public GameObject scream;
@@ -19,7 +19,7 @@ public class Timer_ : MonoBehaviour
     }
     private void Update()
     {
-        if(delayInSeconds <= 4)
+        if(delayInSeconds <= 3)
         {
             txt.SetActive(false);
         }
@@ -30,8 +30,8 @@ public class Timer_ : MonoBehaviour
         {
             Debug.Log("Timer: " + delayInSeconds.ToString("F1"));
             yield return new WaitForSeconds(1f);
-            delayInSeconds -= 0.5f;
-            timeBar.fillAmount = delayInSeconds / 5f;
+            delayInSeconds -= 1f;
+            timeBar.fillAmount = delayInSeconds / 6f;
         }
         ShowImage();
     }
