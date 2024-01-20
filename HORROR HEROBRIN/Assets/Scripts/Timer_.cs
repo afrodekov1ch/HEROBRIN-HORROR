@@ -13,12 +13,15 @@ public class Timer_ : MonoBehaviour
     public GameObject scream;
     public AudioSource ad;
     public GameObject txt;
+    private int health;
+ 
     private void Start()
     {
         StartCoroutine(ShowImageAfterDelay());
     }
     private void Update()
     {
+        health = PlayerPrefs.GetInt("health");
         if(delayInSeconds <= 3)
         {
             txt.SetActive(false);
@@ -40,12 +43,15 @@ public class Timer_ : MonoBehaviour
     {
         ad.Play();
         scream.SetActive(true);
+        health -= 1;
+        PlayerPrefs.SetInt("health", health);
         Invoke("Restart", 3f);
     }
 
     public void Restart()
     {
-        SceneManager.LoadScene(1);
+        var index = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(index + 1);
     }
 }
 

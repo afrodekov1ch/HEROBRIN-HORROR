@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UI : MonoBehaviour
 {
-    public void LoadScene(int scene)
+    public static void LoadScene(int scene)
     {
         SceneManager.LoadScene(scene);
     }
