@@ -38,6 +38,6 @@ public class Health : MonoBehaviour
     }
     private void Restart()
     {
-        UI.LoadScene(1);
+        UI.LoadScene(31);
     }
 }

@@ -10,6 +10,7 @@ public class StartGame : MonoBehaviour
         health = PlayerPrefs.GetInt("health");
         if (health < 3 || health >= 4)
         {
+            PlayerPrefs.SetInt("stop", 0);
             Debug.LogWarning("’œ" + health);
             health = 3;
             PlayerPrefs.SetInt("health", health);

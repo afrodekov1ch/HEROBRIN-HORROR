@@ -39,6 +39,7 @@ public class Timer_ : MonoBehaviour
         ShowImage();
     }
 
+
     private void ShowImage()
     {
         ad.Play();
