@@ -7,9 +7,11 @@ public class SliderController : MonoBehaviour
 {
     public Slider slider;
     public float oldVolume;
+    [SerializeField] private GameObject start;
 
     private void Start()
     {
+        PlayerPrefs.SetFloat("volume", 1);
         oldVolume = slider.value;
         if (!PlayerPrefs.HasKey("volume")) slider.value = 1;
         else slider.value = PlayerPrefs.GetFloat("volume");
@@ -21,6 +23,10 @@ public class SliderController : MonoBehaviour
             PlayerPrefs.SetFloat("volume", slider.value);
             PlayerPrefs.Save();
             oldVolume = slider.value;
+        }
+        if(PlayerPrefs.GetFloat("volume") != 1)
+        {
+            Destroy(start);
         }
     }
 
